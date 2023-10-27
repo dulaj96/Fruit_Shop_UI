@@ -5,6 +5,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { themeColors } from '../theme/Index';
 import { categories, featuredFruits } from '../constants/Index';
 import FruitCard from '../components/FruitCard';
+import FruitCardSales from '../components/FruitCardSales';
 
 const HomeScreen = () => {
   const [activeCat, setActiveCat] = useState('Oranges');
@@ -69,6 +70,26 @@ const HomeScreen = () => {
               return(
                 <FruitCard fruit={fruit} key={index}/>
               )
+            })
+          }
+        </ScrollView>
+      </View>
+
+      {/* hot sales */}
+      <View className='mt-8 mx-4 space-y-1'>
+        <Text style={{color: themeColors.text}} className='font-bold text-xl'>
+          Hot Sales
+        </Text>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={{overflow: 'hidden'}}
+        >
+          {
+            [...featuredFruits].reverse().map((fruit, index) => {
+             return(
+              <FruitCardSales fruit={fruit} key={index}/>
+             )
             })
           }
         </ScrollView>
