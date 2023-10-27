@@ -15,7 +15,7 @@ const FruitCard = ({ fruit }) => {
                     className='mr-4 mt-4 p-2 rounded-2xl'
                     style={{ backgroundColor: 'rgba(255,255,255,0.3)' }}
                 >
-                    <MaterialCommunityIcons name='heart' size={25} color={isFavourite ? 'red' : 'white'} />
+                    <MaterialCommunityIcons name='heart' size={25} color={isFavourite ? fruit.shadow : 'white'} />
                 </TouchableOpacity>
             </View>
             <View
