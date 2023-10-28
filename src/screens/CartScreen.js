@@ -22,20 +22,38 @@ const CartScreen = () => {
         </TouchableOpacity>
       </View>
       <View className='mx-4'>
-        <Text 
-        style={{color: themeColors.text}}
-        className='py-10 text-2xl'
+        <Text
+          style={{ color: themeColors.text }}
+          className='py-10 text-2xl'
         >
           Your <Text className='font-bold'>Cart</Text>
         </Text>
         <View>
           {
             cartItems.map((fruit, index) => {
-              return(
-                <FruitCardCart fruit={fruit} key={index}/>
+              return (
+                <FruitCardCart fruit={fruit} key={index} />
               )
             })
           }
+        </View>
+
+<View className='flex-row justify-end mb-5'>
+  <Text 
+  className='text-lg'
+  style={{color: themeColors.text}}
+  >
+    Total Price: $ <Text className='text-yellow-500 font-bold'>150.00</Text>
+  </Text>
+</View>
+
+        <View className='flex-row justify-center '>
+          <TouchableOpacity
+            className='bg-orange-500 p-4 rounded-xl '
+            style={{ width: 150 }}
+          >
+            <Text className='text-xl text-center text-white font-bold'>Payment</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
