@@ -8,7 +8,7 @@ const FruitCardSales = ({ fruit }) => {
     return (
         <View className='mr-6'>
             <TouchableOpacity
-                onPress={() => navigation.navigate('ProductScreen', {...fruit, color: fruit.color(1)})}
+                onPress={() => navigation.navigate('ProductScreen', { ...fruit, color: fruit.color(1) })}
                 className='flex-row justify-center -mb-9 shadow-lg z-20'
             >
                 <Image

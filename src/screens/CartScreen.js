@@ -38,14 +38,14 @@ const CartScreen = () => {
           }
         </View>
 
-<View className='flex-row justify-end mb-5'>
-  <Text 
-  className='text-lg'
-  style={{color: themeColors.text}}
-  >
-    Total Price: $ <Text className='text-yellow-500 font-bold'>150.00</Text>
-  </Text>
-</View>
+        <View className='flex-row justify-end mb-5'>
+          <Text
+            className='text-lg'
+            style={{ color: themeColors.text }}
+          >
+            Total Price: $ <Text className='text-yellow-500 font-bold'>150.00</Text>
+          </Text>
+        </View>
 
         <View className='flex-row justify-center '>
           <TouchableOpacity

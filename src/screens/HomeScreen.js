@@ -6,9 +6,11 @@ import { themeColors } from '../theme/Index';
 import { categories, featuredFruits } from '../constants/Index';
 import FruitCard from '../components/FruitCard';
 import FruitCardSales from '../components/FruitCardSales';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
   const [activeCat, setActiveCat] = useState('Oranges');
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView className='flex-1 bg-white'>
@@ -16,7 +18,10 @@ const HomeScreen = () => {
       {/* top bar */}
       <View className='flex-row justify-between items-center mx-4 mt-2'>
         <FontAwesome name='bars' size={25} color='black' />
-        <TouchableOpacity className='p-2 rounded-full bg-orange-100'>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('CartScreen')}
+          className='p-2 rounded-full bg-orange-100'
+        >
           <MaterialIcons name='shopping-cart' size={25} color='orange' />
         </TouchableOpacity>
       </View>
@@ -67,8 +72,8 @@ const HomeScreen = () => {
         >
           {
             featuredFruits.map((fruit, index) => {
-              return(
-                <FruitCard fruit={fruit} key={index}/>
+              return (
+                <FruitCard fruit={fruit} key={index} />
               )
             })
           }
@@ -77,19 +82,19 @@ const HomeScreen = () => {
 
       {/* hot sales */}
       <View className='mt-8 mx-4 space-y-1'>
-        <Text style={{color: themeColors.text}} className='font-bold text-xl'>
+        <Text style={{ color: themeColors.text }} className='font-bold text-xl'>
           Hot Sales
         </Text>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          style={{overflow: 'hidden'}}
+          style={{ overflow: 'hidden' }}
         >
           {
             [...featuredFruits].reverse().map((fruit, index) => {
-             return(
-              <FruitCardSales fruit={fruit} key={index}/>
-             )
+              return (
+                <FruitCardSales fruit={fruit} key={index} />
+              )
             })
           }
         </ScrollView>
